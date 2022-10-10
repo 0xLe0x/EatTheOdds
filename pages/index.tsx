@@ -9,7 +9,7 @@ const Home: NextPage = () => {
         <ConnectButton />
       </div>
 
-      <h1 className='text-4xl font-bold mt-6'>🚀 create-web3-frontend</h1>
+      <h1 className='text-4xl font-bold mt-6'>Eat the Odds</h1>
       <InfoSection />
     </div>
   );
@@ -26,20 +26,6 @@ const InfoSection: FC = () => {
           className='underline text-gray-600'
         >
           Link to wagmi docs
-        </a>
-        <a
-          href='https://github.com/dhaiwat10/create-web3-frontend'
-          target='_blank'
-          className='underline text-gray-600'
-        >
-          Open an issue on Github
-        </a>
-        <a
-          href='https://twitter.com/dhaiwat10'
-          target='_blank'
-          className='underline text-gray-600'
-        >
-          DM me on Twitter
         </a>
       </div>
     </div>
