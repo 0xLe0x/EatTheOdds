@@ -8,7 +8,7 @@ module.exports = {
       keyframes: {
         pulsate: {
           "0%": {
-            filter: `drop-shadow(0 0 2px #fff)`
+            filter: `drop-shadow(0 0 2px #fff)`,
           },
           "10%": {
             filter: `drop-shadow(0 0 1px #fff)
@@ -18,7 +18,7 @@ module.exports = {
             drop-shadow(0 0 22px #bc13fe)`,
           },
           "20%": {
-            filter: `drop-shadow(0 0 2px #fff)`
+            filter: `drop-shadow(0 0 2px #fff)`,
           },
           "30%": {
             filter: `drop-shadow(0 0 1px #fff)
@@ -28,7 +28,7 @@ module.exports = {
             drop-shadow(0 0 22px #f00)`,
           },
           "40%": {
-            filter: `drop-shadow(0 0 2px #fff)`
+            filter: `drop-shadow(0 0 2px #fff)`,
           },
           "50%": {
             filter: `drop-shadow(0 0 1px #fff)
@@ -38,7 +38,7 @@ module.exports = {
             drop-shadow(0 0 22px #0f0)`,
           },
           "60%": {
-            filter: `drop-shadow(0 0 2px #fff)`
+            filter: `drop-shadow(0 0 2px #fff)`,
           },
           "70%": {
             filter: `drop-shadow(0 0 1px #fff)
@@ -48,7 +48,7 @@ module.exports = {
             drop-shadow(0 0 22px #00f)`,
           },
           "80%": {
-            filter: `drop-shadow(0 0 2px #fff)`
+            filter: `drop-shadow(0 0 2px #fff)`,
           },
           "90%": {
             filter: `drop-shadow(0 0 1px #fff)
@@ -58,19 +58,40 @@ module.exports = {
             drop-shadow(0 0 22px #ff0)`,
           },
           "100%": {
-            filter: `drop-shadow(0 0 2px #fff)`
+            filter: `drop-shadow(0 0 2px #fff)`,
           },
         },
-        'small-bounce': {
-          "0%, 100%": {
-            transform: 'translateY(-10%)',
-            'animation-timing-function': 'cubic-bezier(0.8,0,1,1)',
+        "small-bounce": {
+          "50%": {
+            transform: "translateY(-10%)",
+            "animation-timing-function": "cubic-bezier(0.8,0,1,1)",
           },
-          '50%': {
-            transform: 'none',
-            'animation-timing-function': 'cubic-bezier(0,0,0.2,1)'
-          }
-        }
+          "0%, 100%": {
+            transform: "none",
+            "animation-timing-function": "cubic-bezier(0,0,0.2,1)",
+          },
+        },
+        "zoom": {
+          "50%": {
+            transform: "scale(1.05)",
+            "animation-timing-function": "cubic-bezier(0.8,0,1,1)",
+          },
+          "0%, 100%": {
+            transform: "none",
+            "animation-timing-function": "cubic-bezier(0,0,0.2,1)",
+          },
+        },
+        "flip": {
+          "0%": {
+            transform: "none",
+          },
+          "50%": {
+            transform: "rotateY(180deg)",
+          },
+          "100%": {
+            transform: "rotateY(360deg)",
+          },
+        },
       },
     },
   },

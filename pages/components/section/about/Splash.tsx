@@ -1,6 +1,8 @@
 import type { FC } from 'react';
 import Image from 'next/image';
 import plateImg from './../../../../public/Plate.png';
+import forkImg from './../../../../public/Fork.png';
+import knifeImg from './../../../../public/Knife.png';
 
 const Splash: FC = () => {
   const pos = [
@@ -58,8 +60,16 @@ const Splash: FC = () => {
           <img src={`/odds/oDD ${i + 1}.png`} className='absolute hover:animate-[small-bounce_2s_ease-in-out_infinite] hover:drop-shadow-[0_15px_15px_rgba(255,255,255,1)]' style={{ left: p.x, top: p.y }} />
         ))}
       </div>
-      <div className='pointer-events-none'>
-        <Image src={plateImg} />
+      <div className='flex justify-center items-center gap-[3%]'>
+        <div className='hover:animate-[flip_4s_ease-in-out_infinite] hover:drop-shadow-[0_15px_15px_rgba(255,255,255,1)]'>
+          <Image src={forkImg} />
+        </div>
+        <div className='hover:animate-[zoom_2s_ease-in-out_infinite] hover:drop-shadow-[0_15px_15px_rgba(255,255,255,1)]'>
+          <Image src={plateImg} />
+        </div>
+        <div className='hover:animate-[flip_4s_ease-in-out_infinite] hover:drop-shadow-[0_15px_15px_rgba(255,255,255,1)]'>
+          <Image src={knifeImg} />
+        </div>
       </div>
     </div>
   )
