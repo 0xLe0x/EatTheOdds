@@ -5,7 +5,7 @@ const Layout = ({ children }: any) => {
   return (
     <div className='relative min-w-screen min-h-screen overflow-hidden bg-[url(../public/dotbg_2.png)]'>
       <Header />
-      <div className='px-[5%] pt-48 pb-40'>
+      <div className='pt-[108px]'>
         {children}
       </div>
       <Footer />

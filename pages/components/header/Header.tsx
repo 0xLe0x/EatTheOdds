@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className='z-10 lg:absolute lg:top-0 flex items-center w-full bg-[#121212] pt-4 pb-10 px-[50px] lg:px-[7%] drop-shadow-2xl overflow-hidden'>
+    <header className='z-10 absolute lg:top-0 flex items-center w-full bg-[#121212] pt-4 pb-10 px-[50px] lg:px-[7%] drop-shadow-2xl overflow-hidden'>
       <div className='flex items-center justify-between w-full'>
         <div className='links flex justify-center items-center gap-10 text-white text-2xl uppercase font-bold'>
           <Link href='/'>

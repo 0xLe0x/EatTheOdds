@@ -86,7 +86,7 @@ module.exports = {
             transform: "none",
           },
           "50%": {
-            transform: "rotateY(180deg)",
+            transform: "rotateY(180deg) translateY(-5%)",
           },
           "100%": {
             transform: "rotateY(360deg)",
