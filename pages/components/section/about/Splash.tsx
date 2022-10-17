@@ -1,40 +1,17 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react'
 import Image from 'next/image';
-import plateImg from './../../../../public/Plate.png';
-import forkImg from './../../../../public/Fork.png';
-import knifeImg from './../../../../public/Knife.png';
-
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
-  })
-  useEffect(() => {
-    // Handler to call on window resize
-    function handleResize() {
-      // Set window width/height to state
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    }
-    // Add event listener
-    window.addEventListener('resize', handleResize)
-    // Call handler right away so state gets updated with initial window size
-    handleResize()
-    // Remove event listener on cleanup
-    return () => window.removeEventListener('resize', handleResize)
-  }, []) // Empty array ensures that effect is only run on mount
-  return windowSize
-}
+import useWindowSize from '@/pages/utils/useWindowSize';
+import plateImg from '@/public/Plate.gif';
+import forkImg from '@/public/Fork.png';
+import knifeImg from '@/public/Knife.png';
 
 const Splash: FC = () => {
   const size = [
     { w: 338, h: 385 },
     { w: 390, h: 389 },
     { w: 311, h: 380 },
-    { w: 319, h: 381 },
+    { w: 220, h: 393 },
     { w: 220, h: 393 },
     { w: 340, h: 356 },
     { w: 401, h: 349 },
@@ -82,7 +59,7 @@ const Splash: FC = () => {
     { x: 1685, y: 505 },
     { x: -131, y: 12 },
     { x: 1300, y: -41 },
-    { x: 688, y: 733 },
+    { x: 728, y: 733 },
     { x: -16, y: 209 },
     { x: 1730, y: -11 },
     { x: 1549, y: 2 },
@@ -135,19 +112,24 @@ const Splash: FC = () => {
   })
 
   return (
-    <div id='splash' className='relative h-[110vh]'>
+    <div id='splash' className='relative' style={{ height: Math.floor(1080 / 1920 * windowSize.width) }}>
       <div>
         {pos_percent.map((p, i) => (
-          <img src={`/odds/oDD ${i + 1}.png`} className='absolute hover:animate-[small-bounce_2s_ease-in-out_infinite] hover:drop-shadow-[0_15px_15px_rgba(255,255,255,1)]' style={{ left: p.x, top: p.y, width: size_percent[i].w }} />
+          <img
+            src={`/odds/oDD ${i + 1}.png`}
+            className='absolute hover:animate-[small-bounce_0.1s_ease-in-out_infinite]'
+            style={{ left: p.x, top: p.y, width: size_percent[i].w }}
+            key={`odd-${i}`}
+          />
         ))}
       </div>
-      <div className='absolute hover:animate-[flip_3s_ease-in-out_infinite] hover:drop-shadow-[0_15px_15px_rgba(255,255,255,1)]' style={{ left: 406 / 1920 * windowSize.width, top: (388 - 108) / 1920 * windowSize.width }}>
+      <div className='absolute' style={{ left: 406 / 1920 * windowSize.width, top: (388 - 108) / 1920 * windowSize.width }}>
         <Image src={forkImg} width={`${forkImg.width / 1920 * windowSize.width}`} height={`${forkImg.height / 1920 * windowSize.width}`} />
       </div>
-      <div className='absolute hover:animate-[zoom_2s_ease-in-out_infinite] hover:drop-shadow-[0_15px_15px_rgba(255,255,255,1)]' style={{ left: 575 / 1920 * windowSize.width, top: (191 - 108) / 1920 * windowSize.width }}>
+      <div className='absolute' style={{ left: 575 / 1920 * windowSize.width, top: (191 - 108) / 1920 * windowSize.width }}>
         <Image src={plateImg} width={`${plateImg.width / 1920 * windowSize.width}`} height={`${plateImg.height / 1920 * windowSize.width}`} />
       </div>
-      <div className='absolute hover:animate-[flip_3s_ease-in-out_infinite] hover:drop-shadow-[0_15px_15px_rgba(255,255,255,1)]' style={{ left: 1411 / 1920 * windowSize.width, top: (387 - 108) / 1920 * windowSize.width }}>
+      <div className='absolute' style={{ left: 1411 / 1920 * windowSize.width, top: (387 - 108) / 1920 * windowSize.width }}>
         <Image src={knifeImg} width={`${knifeImg.width / 1920 * windowSize.width}`} height={`${knifeImg.height / 1920 * windowSize.width}`} />
       </div>
     </div>

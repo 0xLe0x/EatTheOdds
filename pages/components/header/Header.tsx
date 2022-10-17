@@ -1,34 +1,39 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import nav_about from '@/public/navbar/About.png';
+import nav_bitelist from '@/public/navbar/Bitelist.png';
+import nav_tracker from '@/public/navbar/Tracker.png';
+import nav_eatery from '@/public/navbar/Eatery.png';
+import nav_faq from '@/public/navbar/FAQ.png';
 
 const Header = () => {
   return (
-    <header className='z-10 absolute lg:top-0 flex items-center w-full bg-[#121212] pt-4 pb-10 px-[50px] lg:px-[7%] drop-shadow-2xl overflow-hidden'>
-      <div className='flex items-center justify-between w-full'>
+    <header className='z-10 fixed lg:top-0 flex items-center w-full bg-[#121212] pt-4 pb-10 px-[50px] lg:px-[7%] drop-shadow-2xl overflow-hidden'>
+      <div className='flex gap-10 items-center justify-between w-full'>
         <div className='links flex justify-center items-center gap-10 text-white text-2xl uppercase font-bold'>
           <Link href='/'>
             <a>
-              <img src="/EAT THE oDD$.png" alt="EAT THE oDDS" className='animate-[pulsate_20s_infinite]' />
+              <img src="/EAT THE oDD$.png" alt="EAT THE oDDS" />
             </a>
           </Link>
         </div>
 
-        <div className='flex gap-10'>
+        <div className='hidden sm:flex gap-10'>
           <div className='links flex items-center gap-4 text-white text-3xl uppercase font-bold font-[Creepster]'>
             <Link href='#about'>
-              About
+              <Image src={nav_about} />
             </Link>
             <Link href='#bitelist'>
-              Bitelist
+              <Image src={nav_bitelist} />
             </Link>
             <Link href='#tracker'>
-              Tracker
+              <Image src={nav_tracker} />
             </Link>
             <Link href='#eatery'>
-              Eatery
+              <Image src={nav_eatery} />
             </Link>
             <Link href='#faq'>
-              Faq
+              <Image src={nav_faq} />
             </Link>
           </div>
           <div className='flex gap-2 items-center'>
