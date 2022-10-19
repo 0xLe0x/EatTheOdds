@@ -20,33 +20,33 @@ const Header = () => {
 
         <div className='hidden sm:flex gap-10'>
           <div className='links flex items-center gap-4 text-white text-3xl uppercase font-bold font-[Creepster]'>
-            <Link href='#about'>
-              <Image src={nav_about} />
+            <Link className="cursor-pointer" href='#about'>
+              <Image className="cursor-pointer" src={nav_about} />
             </Link>
-            <Link href='#bitelist'>
-              <Image src={nav_bitelist} />
+            <Link className="cursor-pointer" href='#bitelist'>
+              <Image className="cursor-pointer" src={nav_bitelist} />
             </Link>
-            <Link href='#tracker'>
-              <Image src={nav_tracker} />
+            <Link className="cursor-pointer" href='#tracker'>
+              <Image className="cursor-pointer" src={nav_tracker} />
             </Link>
-            <Link href='#eatery'>
-              <Image src={nav_eatery} />
+            <Link className="cursor-pointer" href='#eatery'>
+              <Image className="cursor-pointer" src={nav_eatery} />
             </Link>
-            <Link href='#faq'>
-              <Image src={nav_faq} />
+            <Link className="cursor-pointer" href='#faq'>
+              <Image className="cursor-pointer" src={nav_faq} />
             </Link>
           </div>
           <div className='flex gap-2 items-center'>
-            <a>
+            <a className="cursor-pointer">
               <img src='/icon/twitter.png' alt="Twitter" />
             </a>
-            <a>
+            <a className="cursor-pointer">
               <img src='/icon/discord.png' alt="Discord" />
             </a>
-            <a>
+            <a className="cursor-pointer">
               <img src='/icon/instagram.png' alt="Instagram" />
             </a>
-            <a>
+            <a className="cursor-pointer">
               <img src='/icon/opensea.png' alt="Opensea" />
             </a>
           </div>
