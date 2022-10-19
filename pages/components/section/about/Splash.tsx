@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react'
 import Image from 'next/image';
-import useWindowSize from '@/pages/utils/useWindowSize';
+import { useWindowSize } from 'usehooks-ts';
 import plateImg from '@/public/Plate.gif';
 import forkImg from '@/public/Fork.png';
 import knifeImg from '@/public/Knife.png';
