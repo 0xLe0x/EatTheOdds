@@ -37,7 +37,7 @@ const Header = () => {
             </Link>
           </div>
           <div className='flex gap-2 items-center'>
-            <a className="cursor-pointer">
+            <a href="https://twitter.com/eattheodds" className="cursor-pointer">
               <img src='/icon/twitter.png' alt="Twitter" />
             </a>
             <a className="cursor-pointer">
