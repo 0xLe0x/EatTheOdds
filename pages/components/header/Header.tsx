@@ -23,16 +23,16 @@ const Header = () => {
             <Link className="cursor-pointer" href='#about'>
               <Image className="cursor-pointer" src={nav_about} />
             </Link>
-            <Link className="cursor-pointer" href='#bitelist'>
+            <Link className="cursor-pointer" href='/#bitelist'>
               <Image className="cursor-pointer" src={nav_bitelist} />
             </Link>
             <Link className="cursor-pointer" href='/tracker'>
               <Image className="cursor-pointer" src={nav_tracker} />
             </Link>
-            <Link className="cursor-pointer" href='#eatery'>
+            <Link className="cursor-pointer" href='/#eatery'>
               <Image className="cursor-pointer" src={nav_eatery} />
             </Link>
-            <Link className="cursor-pointer" href='#faq'>
+            <Link className="cursor-pointer" href='/#faq'>
               <Image className="cursor-pointer" src={nav_faq} />
             </Link>
           </div>
