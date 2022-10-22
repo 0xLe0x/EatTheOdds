@@ -8,7 +8,7 @@ import nav_faq from '@/public/navbar/FAQ.png';
 
 const Header = () => {
   return (
-    <header className='z-10 fixed lg:top-0 flex items-center w-full bg-[#121212] pt-4 pb-10 px-[50px] lg:px-[7%] drop-shadow-2xl overflow-hidden'>
+    <header className='z-20 fixed lg:top-0 flex items-center w-full bg-[#121212] pt-4 pb-10 px-[50px] lg:px-[7%] drop-shadow-2xl overflow-hidden'>
       <div className='flex gap-10 items-center justify-between w-full'>
         <div className='links flex justify-center items-center gap-10 text-white text-2xl uppercase font-bold'>
           <Link href='/'>
@@ -23,16 +23,16 @@ const Header = () => {
             <Link className="cursor-pointer" href='#about'>
               <Image className="cursor-pointer" src={nav_about} />
             </Link>
-            <Link className="cursor-pointer" href='#bitelist'>
+            <Link className="cursor-pointer" href='/#bitelist'>
               <Image className="cursor-pointer" src={nav_bitelist} />
             </Link>
-            <Link className="cursor-pointer" href='#tracker'>
+            <Link className="cursor-pointer" href='/tracker'>
               <Image className="cursor-pointer" src={nav_tracker} />
             </Link>
-            <Link className="cursor-pointer" href='#eatery'>
+            <Link className="cursor-pointer" href='/#eatery'>
               <Image className="cursor-pointer" src={nav_eatery} />
             </Link>
-            <Link className="cursor-pointer" href='#faq'>
+            <Link className="cursor-pointer" href='/#faq'>
               <Image className="cursor-pointer" src={nav_faq} />
             </Link>
           </div>
