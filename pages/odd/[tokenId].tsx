@@ -21,4 +21,4 @@ const Odd: NextPage = () => {
   );
 };
 
-export default Home;
+export default Odd;
