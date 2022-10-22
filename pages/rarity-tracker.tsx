@@ -43,89 +43,89 @@ const RarityTracker: NextPage = () => {
     })
   }, []);
 
-  const traitButtons = [
-    "Skin",
-    "Neck",
-    "Mouth",
-    "Eyes",
-    "Nose",
-    "Head",
-    "Ears"
-  ]
+  const traitButtons = [ "Skin", "Neck", "Mouth", "Eyes", "Nose", "Head", "Ears" ]
 
   return (
     <div className='justify-center text-center'>
       {/* <div className='flex justify-center'>
         <ConnectButton />
       </div> */}
-      <div className="container mx-auto text-white relative">
-        <img className="absolute z-[0] top-[-2vw] left-0 w-full" src="/rarity-tracker/screen.png" />
-        <div className="relative top-[6vw]">
+      <div className="w-[80vw] mx-auto text-white relative lg:text-[1vw] z-50">
+        <img className="hidden lg:block absolute z-40 top-[-2vw] left-0 w-full" src="/rarity-tracker/screen.png" />
+        <div className="relative lg:top-[5.5vw] z-50">
 
-        <h1 className="text-[2vw] uppercase bold">Rarity Tracker</h1>
+          <h1 className="text-[2vw] uppercase bold">Rarity Tracker</h1>
 
-        <div className="grid grid-cols-3 my-[2vw] w-[70vw] h-[20vw] mx-auto gap-4">
-          <div className="text-left">
-            <h2 className="text-[1.6vw] uppercase">Trait</h2>
-            <ul>
-              {gameState?.traitNamesByType?.[selectedTrait]?.map((name: string, i: number) => {
-                return (<li key={`trait-rarity-${i}`}>{capitalCase(name)} ... {gameState?.traitCounts?.[name]}</li>)
-              }).slice(0, 10)}
-            </ul>
-          </div>
-          <div className="text-left">
-            <div className=" grid grid-cols-2">
-              <div className="text-[1.6vw] uppercase">
-                Search
+          <div className="grid grid-cols-1 lg:grid-cols-3 my-[2vw] lg:w-[70vw] lg:h-[18vw] mx-auto gap-4">
+            <div className="text-left">
+              <h2 className="lg:text-[1.6vw] uppercase">Trait</h2>
+              <ul>
+                {gameState?.traitNamesByType?.[selectedTrait]?.map((name: string, i: number) => {
+                  return (<li key={`trait-rarity-${i}`}>{capitalCase(name)} ... {gameState?.traitCounts?.[name]}</li>)
+                }).slice(0, 10)}
+              </ul>
+            </div>
+            <div className="text-left">
+              <div className=" grid grid-cols-2">
+                <div className="text-[1.6vw] uppercase">
+                  Search
+                </div>
+                <div>
+                  <input type="text" className="bg-white rounded-sm p-1 text-black text-[1.2vw] w-[8vw]" onChange={changeTokenId} />
+                </div>
               </div>
-              <div>
-                <input type="text" className="bg-white rounded-sm p-1 text-black text-[1.2vw] w-[8vw]" onChange={changeTokenId} />
+              <div className="grid grid-cols-2">
+                <div>
+                  <h3 className="mb-[1vw]">Rarity score: {metadata?.rarityScore}</h3>
+                  <ul>
+                    {metadata?.attributes?.map((attr: any, i: number) => {
+                      return (<li key={`attr-${i}`}>{attr.trait_value}... {gameState?.traitCounts?.[paramCase(attr.trait_value)]}</li>)
+                    }).slice(0, 8)}
+                  </ul>
+                </div>
+                <div>
+                  <h2 className="text-[1vw] mb-[1vw] text-right">Odd #{selectedTokenId}</h2>
+                  <iframe src={`${process.env.NEXT_PUBLIC_VIEWER_URL}/${selectedTokenId}`} className="w-full h-full lg:h-[11vw] lg:w-[11vw]"></iframe>
+                </div>
               </div>
             </div>
-            <div className="grid grid-cols-2">
-              <div>
-            <h3 className="mb-[1vw]">Rarity score: {metadata?.rarityScore}</h3>
-                <ul>
-                  {metadata?.attributes?.map((attr: any, i: number) => {
-                    return (<li key={`attr-${i}`}>{attr.trait_value}... {gameState?.traitCounts?.[paramCase(attr.trait_value)]}</li>)
-                  })}
-                </ul>
-              </div>
-              <div>
-            <h2 className="text-[1vw] mb-[1vw] text-right">Odd #{selectedTokenId}</h2>
-              <iframe src={`${process.env.NEXT_PUBLIC_VIEWER_URL}/${selectedTokenId}`} className="h-[200px] w-[200px]"></iframe>
-              </div>
+            <div className="text-left">
+              <h2 className="text-[1.6vw] uppercase">Leaderboard</h2>
+              <ul>
+                {Array.isArray(livingOdds) && livingOdds.map((odd: any, i: number) => {
+                  return (<li key={`top-tokens-${i}`}>{i + 1}) oDD # {odd.tokenId}... {odd.rarityScore}</li>)
+                })}
+              </ul>
             </div>
-          </div>
-          <div className="text-left">
-            <h2 className="text-[1.6vw] uppercase">Leaderboard</h2>
-            <ul>
-              {Array.isArray(livingOdds) && livingOdds.map((odd: any, i: number) => {
-                return (<li key={`top-tokens-${i}`}>{i + 1}) oDD # {odd.tokenId}... {odd.rarityScore}</li>)
-              })}
-            </ul>
-          </div>
 
-        </div>
-        <div className="grid grid-cols-7 gap-1">
-          {traitButtons.map((trait, i) => (
-            <button key={`trait-button-${i}`} onClick={() => { setSelectedTrait(paramCase(trait)) }} className="p-2 bg-black rounded-md text-fuchsia-600">{trait}</button>
-          ))}
-        </div>
-        <div className="grid grid-cols-3">
-          <div>
-            <h2 className="text-[1.6vw] uppercase">Chowtime: 00:00:00</h2>
           </div>
-          <div>
-            <h2 className="text-[1.6vw] uppercase">Calendaargh: Day {gameState?.currentRound}</h2>
+          <div className="grid grid-cols-7 gap-1">
+            {traitButtons.map((trait, i) => (
+              <button key={`trait-button-${i}`} onClick={() => {
+                setSelectedTrait(paramCase(trait)) }}
+                className="p-2 bg-black rounded-md text-fuchsia-600 uppercase"
+              >
+                {trait}
+              </button>
+            ))}
           </div>
-          <div>
-            <h2 className="text-[1.6vw] uppercase">Total Active Odds: {gameState?.oddsRemaining}</h2>
-          </div>
-
         </div>
       </div>
+      <div className="grid grid-cols-3 relative z-30 top-[23vw] text-white">
+        <div className="relative">
+          <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
+          <h2 className="text-[1.6vw] top-[6.5vw] uppercase relative z-10">Chowtime: 00:00:00</h2>
+        </div>
+        <div className="relative">
+          <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
+          <h2 className="text-[1.6vw] top-[6.5vw] uppercase relative z-10">Calendaargh: Day {gameState?.currentRound}</h2>
+        </div>
+        <div className="relative">
+          <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
+          <h2 className="text-[1.6vw] top-[6.5vw] uppercase relative z-10">Total Active Odds: {gameState?.oddsRemaining}</h2>
+        </div>
       </div>
+      <img src="/rarity-tracker/display-case.png" className="absolute z-40 w-full top-[23vw]" />
     </div>
   );
 };
