@@ -112,22 +112,25 @@ const RarityTracker: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 relative z-30 top-[23vw] text-white">
-        <div className="relative">
-          <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
-          <h2 className="text-[1.6vw] top-[6.5vw] uppercase relative z-10">Chowtime: 00:00:00</h2>
-        </div>
-        <div className="relative">
-          <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
-          <h2 className="text-[1.6vw] top-[6.5vw] uppercase relative z-10">Calendaargh: Day {gameState?.currentRound}</h2>
-        </div>
-        <div className="relative">
-          <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
-          <h2 className="text-[1.6vw] top-[6.5vw] uppercase relative z-10">Total Active Odds: {gameState?.oddsRemaining}</h2>
+      <div className="mx-auto w-[80vw] relative z-30 top-[31vw]">
+        <div className="grid grid-cols-3 relative text-white">
+          <div className="relative">
+            <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
+            <h2 className="text-[1.6vw] top-[6vw] uppercase relative z-10">Chowtime: 00:00:00</h2>
+          </div>
+          <div className="relative">
+            <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
+            <h2 className="text-[1.6vw] top-[6vw] uppercase relative z-10">Calendaargh: Day {gameState?.currentRound}</h2>
+          </div>
+          <div className="relative">
+            <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
+            <h2 className="text-[1.6vw] top-[6vw] uppercase relative z-10">Total Active Odds: {gameState?.oddsRemaining}</h2>
+          </div>
         </div>
       </div>
-      <img src="/rarity-tracker/display-case.png" className="absolute z-40 w-full top-[23vw]" />
-    </div>
+      <img src="/rarity-tracker/display-case.png" className="absolute z-40 w-full top-[31vw]" />
+
+      </div>
   );
 };
 
