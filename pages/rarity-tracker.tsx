@@ -103,9 +103,10 @@ const RarityTracker: NextPage = () => {
             {traitButtons.map((trait, i) => (
               <button key={`trait-button-${i}`} onClick={() => {
                 setSelectedTrait(paramCase(trait)) }}
-                className="p-2 bg-black rounded-md text-fuchsia-600 uppercase"
+                className="rounded-md text-fuchsia-600 uppercase relative"
               >
-                {trait}
+                <img src="/rarity-tracker/trait-button-background.png" className="w-full absolute" />
+                <div className="relative z-20 top-[1vw]"> {trait} </div>
               </button>
             ))}
           </div>
