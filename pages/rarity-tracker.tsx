@@ -43,7 +43,7 @@ const RarityTracker: NextPage = () => {
     })
   }, []);
 
-  const traitButtons = [ "Skin", "Neck", "Mouth", "Eyes", "Nose", "Head", "Ears" ]
+  const traitButtons = ["Skin", "Neck", "Mouth", "Eyes", "Nose", "Head", "Ears"]
 
   return (
     <div className='justify-center text-center relative z-10'>
@@ -102,7 +102,8 @@ const RarityTracker: NextPage = () => {
           <div className="grid grid-cols-7 gap-1">
             {traitButtons.map((trait, i) => (
               <button key={`trait-button-${i}`} onClick={() => {
-                setSelectedTrait(paramCase(trait)) }}
+                setSelectedTrait(paramCase(trait))
+              }}
                 className="rounded-md text-fuchsia-600 uppercase relative"
               >
                 <img src="/rarity-tracker/trait-button-background.png" className="w-full absolute" />
@@ -129,8 +130,7 @@ const RarityTracker: NextPage = () => {
         </div>
       </div>
       <img src="/rarity-tracker/display-case.png" className="absolute z-40 w-full top-[25vw]" />
-
-      </div>
+    </div>
   );
 };
 
