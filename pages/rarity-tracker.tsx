@@ -34,6 +34,7 @@ const RarityTracker: NextPage = () => {
   }
 
   useEffect(() => {
+    changeTokenId({ target: { value: 0 } })
     getGameState().then((json) => {
       setGameState(json)
     })
@@ -63,7 +64,7 @@ const RarityTracker: NextPage = () => {
 
         <h1 className="text-[2vw] uppercase bold">Rarity Tracker</h1>
 
-        <div className="grid grid-cols-3 my-[2vw] w-[70vw] h-[20vw] mx-auto">
+        <div className="grid grid-cols-3 my-[2vw] w-[70vw] h-[20vw] mx-auto gap-4">
           <div className="text-left">
             <h2 className="text-[1.6vw] uppercase">Trait</h2>
             <ul>
@@ -85,22 +86,22 @@ const RarityTracker: NextPage = () => {
               <div>
             <h3 className="mb-[1vw]">Rarity score: {metadata?.rarityScore}</h3>
                 <ul>
-                  {metadata && metadata.attributes.map((attr: any, i: number) => {
+                  {metadata?.attributes?.map((attr: any, i: number) => {
                     return (<li key={`attr-${i}`}>{attr.trait_value}... {gameState?.traitCounts?.[paramCase(attr.trait_value)]}</li>)
                   })}
                 </ul>
               </div>
               <div>
             <h2 className="text-[1vw] mb-[1vw] text-right">Odd #{selectedTokenId}</h2>
-              <iframe src={`http://localhost:3001/${selectedTokenId}`} className="h-[200px] w-[200px]"></iframe>
+              <iframe src={`https://odd-viewer.netlify.app/${selectedTokenId}`} className="h-[200px] w-[200px]"></iframe>
               </div>
             </div>
           </div>
-          <div>
+          <div className="text-left">
             <h2 className="text-[1.6vw] uppercase">Leaderboard</h2>
             <ul>
               {Array.isArray(livingOdds) && livingOdds.map((odd: any, i: number) => {
-                return (<li key={`top-tokens-${i}`}>#{odd.tokenId}... {odd.rarityScore}</li>)
+                return (<li key={`top-tokens-${i}`}>{i + 1}) oDD # {odd.tokenId}... {odd.rarityScore}</li>)
               })}
             </ul>
           </div>
