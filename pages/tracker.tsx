@@ -50,7 +50,10 @@ const RarityTracker: NextPage = () => {
       {/* <div className='flex justify-center'>
         <ConnectButton />
       </div> */}
-      <div className="w-[80vw] mx-auto text-white relative lg:text-[1vw] z-50">
+      <div className="lg:hidden text-white">
+        This site is a rich, graphical experience. Please view on desktop.
+      </div>
+      <div className="hidden lg:block w-[80vw] mx-auto text-white relative lg:text-[1vw] z-50">
         <img className="hidden lg:block absolute z-40 top-[-2vw] left-0 w-full" src="/rarity-tracker/screen.png" />
         <div className="relative lg:top-[5.5vw] z-50">
 
@@ -113,7 +116,7 @@ const RarityTracker: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto w-[80vw] relative z-30 top-[31vw]">
+      <div className="hidden lg:block mx-auto w-[80vw] relative z-30 top-[31vw]">
         <div className="grid grid-cols-3 relative text-white">
           <div className="relative">
             <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
@@ -129,7 +132,7 @@ const RarityTracker: NextPage = () => {
           </div>
         </div>
       </div>
-      <img src="/rarity-tracker/display-case.png" className="absolute z-40 w-full top-[25vw]" />
+      <img src="/rarity-tracker/display-case.png" className="hidden lg:block absolute z-40 w-full top-[25vw]" />
     </div>
   );
 };
