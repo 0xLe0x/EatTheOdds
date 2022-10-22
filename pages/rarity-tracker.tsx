@@ -93,7 +93,7 @@ const RarityTracker: NextPage = () => {
               </div>
               <div>
             <h2 className="text-[1vw] mb-[1vw] text-right">Odd #{selectedTokenId}</h2>
-              <iframe src={`https://odd-viewer.netlify.app/${selectedTokenId}`} className="h-[200px] w-[200px]"></iframe>
+              <iframe src={`${process.env.NEXT_PUBLIC_VIEWER_URL}/${selectedTokenId}`} className="h-[200px] w-[200px]"></iframe>
               </div>
             </div>
           </div>
