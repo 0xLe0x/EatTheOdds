@@ -128,7 +128,7 @@ const RarityTracker: NextPage = () => {
           </div>
         </div>
       </div>
-      <img src="/rarity-tracker/display-case.png" className="absolute z-40 w-full top-[31vw]" />
+      <img src="/rarity-tracker/display-case.png" className="absolute z-40 w-full top-[25vw]" />
 
       </div>
   );
