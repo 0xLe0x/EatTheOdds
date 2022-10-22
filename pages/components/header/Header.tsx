@@ -8,7 +8,7 @@ import nav_faq from '@/public/navbar/FAQ.png';
 
 const Header = () => {
   return (
-    <header className='z-10 fixed lg:top-0 flex items-center w-full bg-[#121212] pt-4 pb-10 px-[50px] lg:px-[7%] drop-shadow-2xl overflow-hidden'>
+    <header className='z-20 fixed lg:top-0 flex items-center w-full bg-[#121212] pt-4 pb-10 px-[50px] lg:px-[7%] drop-shadow-2xl overflow-hidden'>
       <div className='flex gap-10 items-center justify-between w-full'>
         <div className='links flex justify-center items-center gap-10 text-white text-2xl uppercase font-bold'>
           <Link href='/'>

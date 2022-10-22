@@ -46,7 +46,7 @@ const RarityTracker: NextPage = () => {
   const traitButtons = [ "Skin", "Neck", "Mouth", "Eyes", "Nose", "Head", "Ears" ]
 
   return (
-    <div className='justify-center text-center'>
+    <div className='justify-center text-center relative z-10'>
       {/* <div className='flex justify-center'>
         <ConnectButton />
       </div> */}
