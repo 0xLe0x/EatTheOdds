@@ -26,7 +26,7 @@ const Header = () => {
             <Link className="cursor-pointer" href='#bitelist'>
               <Image className="cursor-pointer" src={nav_bitelist} />
             </Link>
-            <Link className="cursor-pointer" href='#tracker'>
+            <Link className="cursor-pointer" href='/tracker'>
               <Image className="cursor-pointer" src={nav_tracker} />
             </Link>
             <Link className="cursor-pointer" href='#eatery'>
