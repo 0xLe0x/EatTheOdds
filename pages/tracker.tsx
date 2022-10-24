@@ -64,7 +64,11 @@ const RarityTracker: NextPage = () => {
               <h2 className="lg:text-[1.6vw] text-fuchsia-600 uppercase">Trait: <span className="text-teal-400">{selectedTrait}</span></h2>
               <ul>
                 {gameState?.traitNamesByType?.[selectedTrait]?.map((name: string, i: number) => {
-                  return (<li key={`trait-rarity-${i}`}>{capitalCase(name)} ... {gameState?.traitCounts?.[name]}</li>)
+                  return (<li key={`trait-rarity-${i}`} className="flex flex-nowrap">
+                     <div className="whitespace-nowrap">{capitalCase(name)} </div>
+                    <div className="flex-grow text-clip overflow-hidden"> ..........................................................</div>
+                    <div> {gameState?.traitCounts?.[name]}</div>
+                     </li>)
                 }).slice(0, 10)}
               </ul>
             </div>
@@ -77,12 +81,16 @@ const RarityTracker: NextPage = () => {
                   <input type="text" className="bg-white rounded-sm p-1 text-black text-[1.2vw] w-[8vw]" onChange={changeTokenId} />
                 </div>
               </div>
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 gap-4">
                 <div>
                   <h3 className="mb-[1vw] text-teal-400">Rarity score: {metadata?.rarityScore}</h3>
                   <ul>
                     {metadata?.attributes?.map((attr: any, i: number) => {
-                      return (<li key={`attr-${i}`}>{attr.trait_value}... {gameState?.traitCounts?.[paramCase(attr.trait_value)]}</li>)
+                      return (<li key={`attr-${i}`} className="flex flex-nowrap max-w-[100%]">
+                    <div className="whitespace-nowrap">{attr.trait_value} </div>
+                    <div className="flex-grow text-clip overflow-hidden"> ..........................................................</div>
+                    <div> {gameState?.traitCounts?.[paramCase(attr.trait_value)]}</div>
+                        </li>)
                     }).slice(0, 8)}
                   </ul>
                 </div>
@@ -96,7 +104,11 @@ const RarityTracker: NextPage = () => {
               <h2 className="text-[1.6vw] text-fuchsia-600 uppercase">Leaderboard</h2>
               <ul>
                 {Array.isArray(livingOdds) && livingOdds.map((odd: any, i: number) => {
-                  return (<li key={`top-tokens-${i}`}>{i + 1}) oDD # {odd.tokenId}... {odd.rarityScore}</li>)
+                  return (<li key={`top-tokens-${i}`} className="flex flex-nowrap max-w-[100%]">
+                    <div className="whitespace-nowrap">{i + 1}) oDD # {odd.tokenId} </div>
+                    <div className="flex-grow text-clip overflow-hidden">..........................................................</div>
+                    <div> {odd.rarityScore}</div>
+                  </li>)
                 })}
               </ul>
             </div>
