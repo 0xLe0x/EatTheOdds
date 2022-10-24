@@ -22,6 +22,7 @@
   "event Transfer(address indexed,address indexed,uint256 indexed)",
   "function DEFAULT_ADMIN_ROLE() view returns (bytes32)",
   "function airdrop(address[])",
+  "function airdropQuantity(address,uint256)",
   "function approve(address,uint256)",
   "function balanceOf(address) view returns (uint256)",
   "function endSaleTime() view returns (uint256)",

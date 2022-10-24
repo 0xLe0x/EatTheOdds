@@ -6,17 +6,18 @@ import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { publicProvider } from 'wagmi/providers/public';
 import type { AppProps } from 'next/app';
 import Layout from './components/layout/layout';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
 
 const { chains, provider } = configureChains(
-  [chain.mainnet],
+  [chain.goerli],
   [
-    jsonRpcProvider({ rpc: () => ({ http: 'https://rpc.ankr.com/eth' }) }),
+    alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_GOERLI_API_KEY }),
     publicProvider(),
   ]
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'My RainbowKit App',
+  appName: 'Eat the Odds',
   chains,
 });
 

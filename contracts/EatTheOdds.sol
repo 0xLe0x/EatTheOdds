@@ -57,6 +57,11 @@ contract EatTheOdds is ERC721A, Ownable, AccessControl, Whitelist, SaleWindow {
         }
     }
 
+    function airdropQuantity(address addr, uint quantity) external onlyOwner {
+        require(quantity  + totalSupply() <= _MAX_SUPPLY, "MAX_SUPPLY_REACHED");
+        _safeMint(addr, quantity);
+    }
+
 
     function setPrice(uint256 price_) external onlyOwner {
         price = price_;

@@ -14,7 +14,7 @@ async function verify(network, address, path) {
   }
 }
 
-modules.exports.deploy = async function main(network, args, argumentsPath) {
+module.exports.deploy = async function main(network, args, argumentsPath) {
 
   const Contract = await ethers.getContractFactory("EatTheOdds");
   const contract = await Contract.deploy(...args)

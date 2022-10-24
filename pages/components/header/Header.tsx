@@ -1,10 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import nav_about from '@/public/navbar/About.png';
-import nav_bitelist from '@/public/navbar/Bitelist.png';
-import nav_tracker from '@/public/navbar/Tracker.png';
-import nav_eatery from '@/public/navbar/Eatery.png';
-import nav_faq from '@/public/navbar/FAQ.png';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 
 const Header = () => {
   return (
@@ -45,6 +41,9 @@ const Header = () => {
               FAQ
               </span>
             </Link>
+          </div>
+          <div>
+            <ConnectButton />
           </div>
           <div className='flex gap-2 items-center'>
             <a href="https://twitter.com/eattheodds" className="cursor-pointer">
