@@ -29,6 +29,14 @@ const RarityTracker: NextPage = () => {
     return []
   }
 
+  function pad(value: number | undefined) {
+      if(value == undefined) return "00"
+      if(value < 10) {
+          return '0' + value;
+      } else {
+          return value;
+      }
+  }
   const countdown = () => {
     const now = new Date();
     let end = setSeconds(setMinutes(addHours(new Date(), 1), 0), 0);
@@ -37,7 +45,7 @@ const RarityTracker: NextPage = () => {
       end: end
     })
     
-    setCountdownTime(`${diff.hours}: ${diff.minutes}: ${diff.seconds}`);
+    setCountdownTime(`${pad(diff.hours)}: ${pad(diff.minutes)}: ${pad(diff.seconds)}`);
   }
 
   const changeTokenId = async (e: any) => {
