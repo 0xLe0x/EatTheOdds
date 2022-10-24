@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from 'next/router';
 import { paramCase, capitalCase } from 'change-case';
 import Image from 'next/image';
+import {format, intervalToDuration, addHours, setMinutes, setSeconds} from 'date-fns';
 
 const RarityTracker: NextPage = () => {
   const [metadata, setMetadata] = useState(null as any);
@@ -11,6 +12,7 @@ const RarityTracker: NextPage = () => {
   const [selectedTrait, setSelectedTrait] = useState("skin");
   const [livingOdds, setLivingOdds] = useState([] as any);
   const [gameState, setGameState] = useState(null as any);
+  const [countdownTime, setCountdownTime] = useState(null as any);
   const getMetadata = async (tokenId: number) => {
     const json = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tokens/metadata/${tokenId}`).then(res => res.json());
     return json
@@ -27,6 +29,17 @@ const RarityTracker: NextPage = () => {
     return []
   }
 
+  const countdown = () => {
+    const now = new Date();
+    let end = setSeconds(setMinutes(addHours(new Date(), 1), 0), 0);
+    const diff = intervalToDuration({
+      start: now,
+      end: end
+    })
+    
+    setCountdownTime(`${diff.hours}: ${diff.minutes}: ${diff.seconds}`);
+  }
+
   const changeTokenId = async (e: any) => {
     setSelectedTokenId(e.target.value)
     const json = await getMetadata(e.target.value)
@@ -41,6 +54,7 @@ const RarityTracker: NextPage = () => {
     getLivingOdds().then((odds: object[]) => {
       setLivingOdds(odds)
     })
+    setInterval(()=>{countdown()}, 1000)
   }, []);
 
   const traitButtons = ["Skin", "Neck", "Mouth", "Eyes", "Nose", "Head", "Ears"]
@@ -135,7 +149,7 @@ const RarityTracker: NextPage = () => {
             <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
             <h2 className="text-[2vw] text-left pl-[2vw] top-[5.5vw] uppercase relative z-10">
               <span className="font-zomby">Chowtime : </span>
-              <span className="text-teal-400">00:00:00</span></h2>
+              <span className="text-teal-400">{countdownTime}</span></h2>
           </div>
           <div className="relative">
             <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />

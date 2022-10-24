@@ -19,21 +19,31 @@ const Header = () => {
         </div>
 
         <div className='hidden sm:flex gap-10'>
-          <div className='links flex items-center gap-4 text-white text-3xl uppercase font-bold font-[Creepster]'>
-            <Link className="cursor-pointer" href='#about'>
-              <Image className="cursor-pointer" src={nav_about} />
+          <div className='links flex items-center gap-4 text-white text-3xl uppercase font-zomby '>
+            <Link className="cursor-pointer" href='/#about'>
+              <span className="hover:text-fuchsia-600 cursor-pointer">
+              About
+              </span>
             </Link>
             <Link className="cursor-pointer" href='/#bitelist'>
-              <Image className="cursor-pointer" src={nav_bitelist} />
+              <span className="hover:text-fuchsia-600 cursor-pointer">
+              Bitelist
+              </span>
             </Link>
             <Link className="cursor-pointer" href='/tracker'>
-              <Image className="cursor-pointer" src={nav_tracker} />
+              <span className="hover:text-fuchsia-600 cursor-pointer">
+              Tracker
+              </span>
             </Link>
             <Link className="cursor-pointer" href='/#eatery'>
-              <Image className="cursor-pointer" src={nav_eatery} />
+              <span className="hover:text-fuchsia-600 cursor-pointer">
+              Eatery
+              </span>
             </Link>
             <Link className="cursor-pointer" href='/#faq'>
-              <Image className="cursor-pointer" src={nav_faq} />
+              <span className="hover:text-fuchsia-600 cursor-pointer">
+              FAQ
+              </span>
             </Link>
           </div>
           <div className='flex gap-2 items-center'>
