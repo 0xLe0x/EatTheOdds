@@ -61,7 +61,7 @@ const RarityTracker: NextPage = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 my-[2vw] lg:w-[70vw] lg:h-[18.5vw] mx-auto gap-4">
             <div className="text-left">
-              <h2 className="lg:text-[1.6vw] uppercase">Trait</h2>
+              <h2 className="lg:text-[1.6vw] text-fuchsia-600 uppercase">Trait: <span className="text-teal-400">{selectedTrait}</span></h2>
               <ul>
                 {gameState?.traitNamesByType?.[selectedTrait]?.map((name: string, i: number) => {
                   return (<li key={`trait-rarity-${i}`}>{capitalCase(name)} ... {gameState?.traitCounts?.[name]}</li>)
@@ -70,7 +70,7 @@ const RarityTracker: NextPage = () => {
             </div>
             <div className="text-left">
               <div className=" grid grid-cols-2">
-                <div className="text-[1.6vw] uppercase">
+                <div className="text-[1.6vw] text-fuchsia-600 uppercase">
                   Search
                 </div>
                 <div>
@@ -79,7 +79,7 @@ const RarityTracker: NextPage = () => {
               </div>
               <div className="grid grid-cols-2">
                 <div>
-                  <h3 className="mb-[1vw]">Rarity score: {metadata?.rarityScore}</h3>
+                  <h3 className="mb-[1vw] text-teal-400">Rarity score: {metadata?.rarityScore}</h3>
                   <ul>
                     {metadata?.attributes?.map((attr: any, i: number) => {
                       return (<li key={`attr-${i}`}>{attr.trait_value}... {gameState?.traitCounts?.[paramCase(attr.trait_value)]}</li>)
@@ -87,13 +87,13 @@ const RarityTracker: NextPage = () => {
                   </ul>
                 </div>
                 <div>
-                  <h2 className="text-[1vw] mb-[1vw] text-right">Odd #{selectedTokenId}</h2>
+                  <h2 className="text-[1vw] mb-[1vw] text-right text-teal-400">Odd #{selectedTokenId}</h2>
                   <iframe src={`${process.env.NEXT_PUBLIC_VIEWER_URL}/${selectedTokenId}`} className="w-full h-full lg:h-[11vw] lg:w-[11vw]"></iframe>
                 </div>
               </div>
             </div>
             <div className="text-left">
-              <h2 className="text-[1.6vw] uppercase">Leaderboard</h2>
+              <h2 className="text-[1.6vw] text-fuchsia-600 uppercase">Leaderboard</h2>
               <ul>
                 {Array.isArray(livingOdds) && livingOdds.map((odd: any, i: number) => {
                   return (<li key={`top-tokens-${i}`}>{i + 1}) oDD # {odd.tokenId}... {odd.rarityScore}</li>)
@@ -122,17 +122,20 @@ const RarityTracker: NextPage = () => {
           <div className="relative">
             <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
             <h2 className="text-[2vw] text-left pl-[2vw] top-[5.5vw] uppercase relative z-10">
-              <span className="font-zomby">Chowtime :</span> 00:00:00</h2>
+              <span className="font-zomby">Chowtime : </span>
+              <span className="text-teal-400">00:00:00</span></h2>
           </div>
           <div className="relative">
             <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
             <h2 className="text-[2vw] text-left pl-[2vw] top-[5.5vw] uppercase relative z-10">
-              <span className="font-zomby">Calendaargh :</span> Day {gameState?.currentRound}</h2>
+              <span className="font-zomby">Calendaargh : </span>
+              <span className="text-teal-400">Day {gameState?.currentRound}</span></h2>
           </div>
           <div className="relative">
             <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
             <h2 className="text-[2vw] text-left pl-[2vw] top-[5.5vw] uppercase relative z-10">
-              <span className="font-zomby">Total Active Odds :</span> {gameState?.oddsRemaining}</h2>
+              <span className="font-zomby">Total Active Odds : </span>
+              <span className="text-teal-400">{gameState?.oddsRemaining}</span></h2>
           </div>
         </div>
       </div>
