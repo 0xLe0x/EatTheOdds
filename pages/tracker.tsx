@@ -53,13 +53,13 @@ const RarityTracker: NextPage = () => {
       <div className="lg:hidden text-white">
         This site is a rich, graphical experience. Please view on desktop.
       </div>
-      <div className="hidden lg:block w-[80vw] mx-auto text-white relative lg:text-[1vw] z-50">
+      <div className="hidden lg:block w-[87vw] mx-auto text-white relative lg:text-[1vw] z-50">
         <img className="hidden lg:block absolute z-40 top-[-2vw] left-0 w-full" src="/rarity-tracker/screen.png" />
         <div className="relative lg:top-[5.5vw] z-50">
 
-          <h1 className="text-[2vw] uppercase bold">Rarity Tracker</h1>
+          <h1 className="font-zomby text-[3vw] uppercase bold black-text-outline">Rarity Tracker</h1>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 my-[2vw] lg:w-[70vw] lg:h-[18vw] mx-auto gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 my-[2vw] lg:w-[70vw] lg:h-[18.5vw] mx-auto gap-4">
             <div className="text-left">
               <h2 className="lg:text-[1.6vw] uppercase">Trait</h2>
               <ul>
@@ -102,7 +102,8 @@ const RarityTracker: NextPage = () => {
             </div>
 
           </div>
-          <div className="grid grid-cols-7 gap-1">
+
+          <div className="grid grid-cols-7 gap-1 w-[77vw] mx-auto">
             {traitButtons.map((trait, i) => (
               <button key={`trait-button-${i}`} onClick={() => {
                 setSelectedTrait(paramCase(trait))
@@ -110,25 +111,28 @@ const RarityTracker: NextPage = () => {
                 className="rounded-md text-fuchsia-600 uppercase relative"
               >
                 <img src="/rarity-tracker/trait-button-background.png" className="w-full absolute" />
-                <div className="relative z-20 top-[1vw]"> {trait} </div>
+                <div className="relative z-20 top-[.5vw] font-zomby text-[2vw]"> {trait} </div>
               </button>
             ))}
           </div>
         </div>
       </div>
-      <div className="hidden lg:block mx-auto w-[80vw] relative z-30 top-[31vw]">
+      <div className="hidden lg:block mx-auto w-[80vw] relative z-30 top-[27.5vw]">
         <div className="grid grid-cols-3 relative text-white">
           <div className="relative">
             <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
-            <h2 className="text-[1.6vw] top-[6vw] uppercase relative z-10">Chowtime: 00:00:00</h2>
+            <h2 className="text-[2vw] text-left pl-[2vw] top-[5.5vw] uppercase relative z-10">
+              <span className="font-zomby">Chowtime :</span> 00:00:00</h2>
           </div>
           <div className="relative">
             <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
-            <h2 className="text-[1.6vw] top-[6vw] uppercase relative z-10">Calendaargh: Day {gameState?.currentRound}</h2>
+            <h2 className="text-[2vw] text-left pl-[2vw] top-[5.5vw] uppercase relative z-10">
+              <span className="font-zomby">Calendaargh :</span> Day {gameState?.currentRound}</h2>
           </div>
           <div className="relative">
             <img src="/rarity-tracker/counter-box.png" className="absolute w-full top-0 left-0" />
-            <h2 className="text-[1.6vw] top-[6vw] uppercase relative z-10">Total Active Odds: {gameState?.oddsRemaining}</h2>
+            <h2 className="text-[2vw] text-left pl-[2vw] top-[5.5vw] uppercase relative z-10">
+              <span className="font-zomby">Total Active Odds :</span> {gameState?.oddsRemaining}</h2>
           </div>
         </div>
       </div>

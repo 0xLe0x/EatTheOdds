@@ -5,6 +5,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        zomby: ['Zombified', 'sans-serif'],
+        creep: ['Creepster', 'sans-serif'],
+        elite: ['Special-Elite', 'sans-serif'],
+      },
       keyframes: {
         pulsate: {
           "0%": {
