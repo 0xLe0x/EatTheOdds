@@ -11,7 +11,7 @@ const Splash: FC = () => {
     { w: 338, h: 385 },
     { w: 390, h: 389 },
     { w: 311, h: 380 },
-    { w: 220, h: 393 },
+    { w: 319, h: 358 },
     { w: 220, h: 393 },
     { w: 340, h: 356 },
     { w: 401, h: 349 },
@@ -59,7 +59,7 @@ const Splash: FC = () => {
     { x: 1685, y: 505 },
     { x: -131, y: 12 },
     { x: 1300, y: -41 },
-    { x: 728, y: 733 },
+    { x: 688, y: 773 },
     { x: -16, y: 209 },
     { x: 1730, y: -11 },
     { x: 1549, y: 2 },
@@ -127,7 +127,6 @@ const Splash: FC = () => {
         <Image src={forkImg} width={`${forkImg.width / 1920 * windowSize.width}`} height={`${forkImg.height / 1920 * windowSize.width}`} />
       </div>
       <div className='absolute' style={{ left: 575 / 1920 * windowSize.width, top: (191 - 108) / 1920 * windowSize.width }}>
-        {/* <Image src={plateImg} width={`${plateImg.width / 1920 * windowSize.width}`} height={`${plateImg.height / 1920 * windowSize.width}`} /> */}
         <img src='Plate.gif' width={`${plateImg.width / 1920 * windowSize.width}`} height={`${plateImg.height / 1920 * windowSize.width}`} />
       </div>
       <div className='absolute' style={{ left: 1411 / 1920 * windowSize.width, top: (387 - 108) / 1920 * windowSize.width }}>
