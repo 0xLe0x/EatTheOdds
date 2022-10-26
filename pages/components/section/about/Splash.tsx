@@ -127,7 +127,8 @@ const Splash: FC = () => {
         <Image src={forkImg} width={`${forkImg.width / 1920 * windowSize.width}`} height={`${forkImg.height / 1920 * windowSize.width}`} />
       </div>
       <div className='absolute' style={{ left: 575 / 1920 * windowSize.width, top: (191 - 108) / 1920 * windowSize.width }}>
-        <Image src={plateImg} width={`${plateImg.width / 1920 * windowSize.width}`} height={`${plateImg.height / 1920 * windowSize.width}`} />
+        {/* <Image src={plateImg} width={`${plateImg.width / 1920 * windowSize.width}`} height={`${plateImg.height / 1920 * windowSize.width}`} /> */}
+        <img src='Plate.gif' width={`${plateImg.width / 1920 * windowSize.width}`} height={`${plateImg.height / 1920 * windowSize.width}`} />
       </div>
       <div className='absolute' style={{ left: 1411 / 1920 * windowSize.width, top: (387 - 108) / 1920 * windowSize.width }}>
         <Image src={knifeImg} width={`${knifeImg.width / 1920 * windowSize.width}`} height={`${knifeImg.height / 1920 * windowSize.width}`} />
