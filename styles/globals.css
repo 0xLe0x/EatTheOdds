@@ -33,6 +33,11 @@
     -webkit-text-stroke-color: black;
 }
 
+.black-text-outline-sm{
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: black;
+}
+
 body{
     @apply font-elite;
 }

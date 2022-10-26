@@ -16,12 +16,12 @@ const Header = () => {
 
         <div className='hidden sm:flex gap-10'>
           <div className='links flex items-center gap-4 text-white text-3xl uppercase font-zomby '>
-            <Link className="cursor-pointer" href='/#about'>
+            <Link className="cursor-pointer" href='/'>
               <span className="hover:text-fuchsia-600 cursor-pointer">
               About
               </span>
             </Link>
-            <Link className="cursor-pointer" href='/#bitelist'>
+            <Link className="cursor-pointer" href='/bitelist'>
               <span className="hover:text-fuchsia-600 cursor-pointer">
               Bitelist
               </span>
@@ -31,18 +31,18 @@ const Header = () => {
               Tracker
               </span>
             </Link>
-            <Link className="cursor-pointer" href='/#eatery'>
+            <Link className="cursor-pointer" href='/eatery'>
               <span className="hover:text-fuchsia-600 cursor-pointer">
               Eatery
               </span>
             </Link>
-            <Link className="cursor-pointer" href='/#faq'>
+            <Link className="cursor-pointer" href='/faq'>
               <span className="hover:text-fuchsia-600 cursor-pointer">
               FAQ
               </span>
             </Link>
           </div>
-          <div>
+          <div className='flex items-center'>
             <ConnectButton />
           </div>
           <div className='flex gap-2 items-center'>

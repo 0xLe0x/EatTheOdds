@@ -6,8 +6,8 @@ import counterImg from '@/public/Counter.png';
 const Counter: FC = () => {
 
   return (
-    <div id='counter' className='relative w-full max-w-[1920px] mx-auto '>
-      <Image src={counterImg} className="w-[100vw]"/>
+    <div id='counter' className='relative w-full max-w-[1920px] mx-auto'>
+      <Image src={counterImg} />
       <div className='absolute font-[special-elite] text-[10px] leading-3 sm:text-[15px] sm:leading-5 lg:text-[20px] lg:leading-6 left-[12%] top-[18.2%] w-[19.6%] h-[26.4%] overflow-auto'>
         Welcome Delinquents, Deviants, & Degenerate Scum to an all new NFT fine dinning extravaganza,
         where being viscous is delicious.
@@ -28,6 +28,29 @@ const Counter: FC = () => {
         Revel in victory and laugh at defeat
         Cause your oDD$ get better.
         The more that you eat!
+      </div>
+      <div className='absolute left-[68.5%] top-[23.2%] w-[19.6%]'>
+        <div className='flex flex-col justify-center text-[1.1vw] leading-[1.4vw]'>
+          <p>Heads will roll</p>
+          <p>as traits are hoarded</p>
+          <p>for after each CHOWTIME</p>
+          <p>the rarest odd gets rewarded</p>
+        </div>
+        <div className='grid grid-rows-6 grid-flow-col gap-x-1 mt-2 text-[1.1vw] leading-[1.4vw]'>
+            <p>Day 1 - 1 ETH</p>
+            <p>Day 2 - 1 ETH</p>
+            <p>Day 3 - 1 ETH</p>
+            <p>Day 4 - 1 ETH</p>
+            <p>Day 5 - 2 ETH</p>
+            <p>Day 6 - 2 ETH</p>
+            <p>Day 7 - 2 ETH</p>
+            <p>Day 8 - 3 ETH</p>
+            <p>Day 9 - 3 ETH</p>
+            <p>Day 10 - 3 ETH</p>
+            <p>Day 11 - 5 ETH</p>
+            <p>Day 12 - 10 ETH</p>
+        </div>
+        <p className='text-[2.7vw] font-zomby text-white black-text-outline-sm'>DAY 13 - 30 ETH</p>
       </div>
     </div>
   )
