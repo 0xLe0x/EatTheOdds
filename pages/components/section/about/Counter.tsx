@@ -7,7 +7,7 @@ const Counter: FC = () => {
 
   return (
     <div id='counter' className='relative w-full max-w-[1920px] mx-auto'>
-      <Image src={counterImg} />
+      <Image src={counterImg} alt="counter"/>
       <div className='absolute font-[special-elite] text-[10px] leading-3 sm:text-[15px] sm:leading-5 lg:text-[20px] lg:leading-6 left-[12%] top-[18.2%] w-[19.6%] h-[26.4%] overflow-auto'>
         Welcome Delinquents, Deviants, & Degenerate Scum to an all new NFT fine dinning extravaganza,
         where being viscous is delicious.

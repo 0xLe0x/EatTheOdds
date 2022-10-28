@@ -5,7 +5,7 @@ import eateryImg from '@/public/eatery.png';
 const RarityTracker: NextPage = () => {
   return (
     <div className='relative w-full max-w-[1920px] mx-auto'>
-      <Image src={eateryImg} />
+      <Image src={eateryImg} alt="eatery"/>
     </div>
   );
 };

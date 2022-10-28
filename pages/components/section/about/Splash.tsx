@@ -132,13 +132,13 @@ const Splash: FC = () => {
         ))}
       </div>
       <div className='absolute' style={{ left: relativeVw(406), top: relativeVw(388 - 108) }}>
-        <Image src={forkImg} width={`${relativePixels(forkImg.width)}`} height={`${relativePixels(forkImg.height)}`} />
+        <Image src={forkImg} width={`${relativePixels(forkImg.width)}`} height={`${relativePixels(forkImg.height)}`} alt="fork"/>
       </div>
       <div className='absolute' style={{ left: relativeVw(575), top: relativeVw(191 - 108) }}>
-        <img src='Plate.gif' width={`${relativePixels(plateImg.width)}`} height={`${relativePixels(plateImg.height)}`} />
+        <img src='Plate.gif' width={`${relativePixels(plateImg.width)}`} height={`${relativePixels(plateImg.height)}`} alt="plate"/>
       </div>
       <div className='absolute' style={{ left: relativeVw(1411), top: relativeVw(387 - 108) }}>
-        <Image src={knifeImg} width={`${relativePixels(knifeImg.width)}`} height={`${relativePixels(knifeImg.height)}`} />
+        <Image src={knifeImg} width={`${relativePixels(knifeImg.width)}`} height={`${relativePixels(knifeImg.height)}`} alt="knife"/>
       </div>
     </div>
   )

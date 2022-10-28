@@ -7,7 +7,7 @@ const Napkin: FC = () => {
 
   return (
     <div id='napkin' className='relative'>
-      <Image src={napkinImg} />
+      <Image src={napkinImg} alt="napkin"/>
     </div>
   )
 }
