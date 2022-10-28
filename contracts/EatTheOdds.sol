@@ -20,9 +20,11 @@ contract EatTheOdds is ERC721A, Ownable, AccessControl, Whitelist, SaleWindow {
     uint256 private constant _MAX_SUPPLY = 8192;
     
     uint256 public price;
+    uint256 public launchBlock;
     string private _baseUri;
 
     bool public whitelistFinished;
+
 
     mapping(address => bool) public userHasMinted;
 
@@ -47,6 +49,7 @@ contract EatTheOdds is ERC721A, Ownable, AccessControl, Whitelist, SaleWindow {
     {
         _baseUri = baseUri;
         price = price_;
+        launchBlock = block.number;
     }
 
     function airdrop(address[] memory addresses) external onlyOwner {

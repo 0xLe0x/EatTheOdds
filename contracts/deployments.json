@@ -12,6 +12,7 @@
 			"Eat the Odds Game",
 			"ETO",
 			"https://oddserver.fob.dev/api/tokens/metadata/"
-		]
+		],
+		"launchBlock": 7826058
 	}
 }

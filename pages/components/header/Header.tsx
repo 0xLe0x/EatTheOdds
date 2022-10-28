@@ -8,9 +8,7 @@ const Header = () => {
       <div className='flex gap-10 items-center justify-between w-full'>
         <div className='links flex justify-center items-center gap-10 text-white text-2xl uppercase font-bold'>
           <Link href='/'>
-            <a>
               <img src="/EAT THE oDD$.png" alt="EAT THE oDDS" />
-            </a>
           </Link>
         </div>
 
