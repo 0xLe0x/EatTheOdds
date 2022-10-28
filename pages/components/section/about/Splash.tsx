@@ -111,8 +111,16 @@ const Splash: FC = () => {
     return { w: s.w / 1920 * windowSize.width, h: s.h / 1920 * windowSize.width }
   })
 
+  const relativePixels = (intrinsicSize: number) => {
+    return intrinsicSize / 1920 * windowSize.width;
+  }
+
+  const relativeVw = (intrinsicSize: number) => {
+    return (intrinsicSize / 1920 * 100).toString() + "vw";
+  }
+
   return (
-    <div id='splash' className='relative' style={{ height: Math.floor(1080 / 1920 * windowSize.width) }}>
+    <div id='splash' className='relative h-[56.25vw]'>
       <div>
         {pos_percent.map((p, i) => (
           <img
@@ -123,14 +131,14 @@ const Splash: FC = () => {
           />
         ))}
       </div>
-      <div className='absolute' style={{ left: 406 / 1920 * windowSize.width, top: (388 - 108) / 1920 * windowSize.width }}>
-        <Image src={forkImg} width={`${forkImg.width / 1920 * windowSize.width}`} height={`${forkImg.height / 1920 * windowSize.width}`} />
+      <div className='absolute' style={{ left: relativeVw(406), top: relativeVw(388 - 108) }}>
+        <Image src={forkImg} width={`${relativePixels(forkImg.width)}`} height={`${relativePixels(forkImg.height)}`} />
       </div>
-      <div className='absolute' style={{ left: 575 / 1920 * windowSize.width, top: (191 - 108) / 1920 * windowSize.width }}>
-        <img src='Plate.gif' width={`${plateImg.width / 1920 * windowSize.width}`} height={`${plateImg.height / 1920 * windowSize.width}`} />
+      <div className='absolute' style={{ left: relativeVw(575), top: relativeVw(191 - 108) }}>
+        <img src='Plate.gif' width={`${relativePixels(plateImg.width)}`} height={`${relativePixels(plateImg.height)}`} />
       </div>
-      <div className='absolute' style={{ left: 1411 / 1920 * windowSize.width, top: (387 - 108) / 1920 * windowSize.width }}>
-        <Image src={knifeImg} width={`${knifeImg.width / 1920 * windowSize.width}`} height={`${knifeImg.height / 1920 * windowSize.width}`} />
+      <div className='absolute' style={{ left: relativeVw(1411), top: relativeVw(387 - 108) }}>
+        <Image src={knifeImg} width={`${relativePixels(knifeImg.width)}`} height={`${relativePixels(knifeImg.height)}`} />
       </div>
     </div>
   )

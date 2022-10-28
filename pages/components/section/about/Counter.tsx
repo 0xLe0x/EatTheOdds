@@ -30,13 +30,13 @@ const Counter: FC = () => {
         The more that you eat!
       </div>
       <div className='absolute left-[68.5%] top-[23.2%] w-[19.6%]'>
-        <div className='flex flex-col justify-center text-[1.1vw] leading-[1.4vw]'>
+        <div className='flex flex-col justify-center text-[1.1vw] leading-[1.4vw] 3xl:text-[21px] 3xl:leading-[26px]'>
           <p>Heads will roll</p>
           <p>as traits are hoarded</p>
           <p>for after each CHOWTIME</p>
           <p>the rarest odd gets rewarded</p>
         </div>
-        <div className='grid grid-rows-6 grid-flow-col gap-x-1 mt-2 text-[1.1vw] leading-[1.4vw]'>
+        <div className='grid grid-rows-6 grid-flow-col gap-x-1 mt-2 text-[1.1vw] leading-[1.4vw] 3xl:text-[21px] 3xl:leading-[26px]'>
             <p>Day 1 - 1 ETH</p>
             <p>Day 2 - 1 ETH</p>
             <p>Day 3 - 1 ETH</p>
@@ -50,7 +50,7 @@ const Counter: FC = () => {
             <p>Day 11 - 5 ETH</p>
             <p>Day 12 - 10 ETH</p>
         </div>
-        <p className='text-[2.7vw] font-zomby text-white black-text-outline-sm'>DAY 13 - 30 ETH</p>
+        <p className='text-[2.7vw] 3xl:text-[52px] font-zomby text-white black-text-outline-sm'>DAY 13 - 30 ETH</p>
       </div>
     </div>
   )

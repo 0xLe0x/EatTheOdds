@@ -6,9 +6,9 @@ import ghostsImg from '@/public/Ghosts.png';
 const Ghosts: FC = () => {
 
   return (
-    <div id='ghosts' className='relative w-full max-w-[1920px] mx-auto'>
+    <div id='ghosts' className='relative w-full  mx-auto'>
       <Image src={ghostsImg} />
-      <div className='absolute font-[special-elite] text-[1.2vw] leading-[1.6vw] top-[43.3%] text-white flex flex-col justify-center w-full gap-1'>
+      <div className='absolute font-[special-elite] text-[1.2vw]  leading-[1.6vw] 3xl:text-[30px] 3xl:leading-[32px] top-[43.3%] text-white flex flex-col justify-center w-full gap-1'>
         <div>
           Head over to discord.
           <br />
@@ -26,7 +26,7 @@ const Ghosts: FC = () => {
         </div>
         <div className='flex justify-center'>
           <a href='#'>
-            <img src='/icon/discord_large.png' alt='discord' className='w-[4vw]'/>
+            <img src='/icon/discord_large.png' alt='discord' className='w-[4vw] 3xl:w-[76px]'/>
           </a>
         </div>
       </div>
