@@ -6,8 +6,8 @@ import postersImg from '@/public/Posters.png';
 const Counter: FC = () => {
 
   return (
-    <div id='counter' className='relative w-full max-w-[1920px] mx-auto text-white'>
-      <Image src={postersImg} className="w-[100vw]" alt="Posters"/>
+    <div id='counter' className='relative w-full mx-auto text-white'>
+      <Image src={postersImg} className="w-full" alt="Posters"/>
       <div className='absolute text-[16px] leading-[20px] lg:text-[20px] lg:leading-[24px] text-left left-[11.5%] top-[10.6%] w-[20.5%] h-[70%] overflow-auto'>
         1) Each day, every oDD will automatically go up against another random oDD in the eatery.
         <br />
