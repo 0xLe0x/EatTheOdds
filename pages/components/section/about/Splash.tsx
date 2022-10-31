@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react'
 import Image from 'next/image';
-import { useWindowSize } from 'usehooks-ts';
 import plateImg from '@/public/Plate.gif';
 import forkImg from '@/public/Fork.png';
 import knifeImg from '@/public/Knife.png';
@@ -103,17 +102,13 @@ const Splash: FC = () => {
     { x: 402, y: 518 },
   ];
 
-  const windowSize = useWindowSize();
   const pos_percent = pos.map(p => {
-    return { x: p.x / 1920 * windowSize.width, y: (p.y - 108) / 1920 * windowSize.width }
-  })
-  const size_percent = size.map(s => {
-    return { w: s.w / 1920 * windowSize.width, h: s.h / 1920 * windowSize.width }
+    return { x: (p.x / 1920 * 100) + "vw" , y: ((p.y - 108) / 1920 * 100) + "vw" }
   })
 
-  const relativePixels = (intrinsicSize: number) => {
-    return intrinsicSize / 1920 * windowSize.width;
-  }
+  const size_percent = size.map(s => {
+    return { w: (s.w / 1920 * 100) + "vw" , h: (s.h / 1920 * 100) + "vw" }
+  })
 
   const relativeVw = (intrinsicSize: number) => {
     return (intrinsicSize / 1920 * 100).toString() + "vw";
@@ -132,13 +127,13 @@ const Splash: FC = () => {
         ))}
       </div>
       <div className='absolute' style={{ left: relativeVw(406), top: relativeVw(388 - 108) }}>
-        <Image src={forkImg} width={`${relativePixels(forkImg.width)}`} height={`${relativePixels(forkImg.height)}`} alt="fork"/>
+        <Image src={forkImg} style={{ width: relativeVw(forkImg.width), height: relativeVw(forkImg.height) }} alt="fork" />
       </div>
       <div className='absolute' style={{ left: relativeVw(575), top: relativeVw(191 - 108) }}>
-        <img src='Plate.gif' width={`${relativePixels(plateImg.width)}`} height={`${relativePixels(plateImg.height)}`} alt="plate"/>
+        <img src='Plate.gif' style={{ width: relativeVw(plateImg.width), height: relativeVw(plateImg.height) }} alt="plate" />
       </div>
       <div className='absolute' style={{ left: relativeVw(1411), top: relativeVw(387 - 108) }}>
-        <Image src={knifeImg} width={`${relativePixels(knifeImg.width)}`} height={`${relativePixels(knifeImg.height)}`} alt="knife"/>
+        <Image src={knifeImg} style={{ width: relativeVw(knifeImg.width), height: relativeVw(knifeImg.height) }} alt="knife" />
       </div>
     </div>
   )

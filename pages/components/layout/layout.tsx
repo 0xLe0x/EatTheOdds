@@ -6,7 +6,7 @@ const Layout = ({ children }: any) => {
     <div className='relative min-w-screen min-h-screen bg-[url(../public/dotbg_2.png)]'>
       <Header />
       {/* <div className='pt-[108px] p-[120px]'> */}
-      <div>
+      <div className="pt-[100px]">
         {children}
       </div>
       <Footer />
