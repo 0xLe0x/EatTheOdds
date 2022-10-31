@@ -66,9 +66,6 @@ const RarityTracker: NextPage = () => {
 
   return (
     <div className='justify-center text-center relative z-10 min-h-[80vw]'>
-      <div className="lg:hidden text-white">
-        This site is a rich, graphical experience. Please view on desktop.
-      </div>
       <div className="hidden lg:block w-[87vw] mx-auto text-white relative lg:text-[1vw] z-50">
         <img className="hidden lg:block absolute z-40 top-[-2vw] left-0 w-full" src="/rarity-tracker/screen.png" />
         <div className="relative lg:top-[5.5vw] z-50">
