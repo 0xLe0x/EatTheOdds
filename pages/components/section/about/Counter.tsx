@@ -6,8 +6,8 @@ import counterImg from '@/public/Counter.png';
 const Counter: FC = () => {
 
   return (
-    <div id='counter' className='relative w-full max-w-[1920px] mx-auto'>
-      <Image src={counterImg} />
+    <div id='counter' className='relative w-full mx-auto'>
+      <Image src={counterImg} alt="counter" className='w-full'/>
       <div className='absolute font-[special-elite] text-[10px] leading-3 sm:text-[15px] sm:leading-5 lg:text-[20px] lg:leading-6 left-[12%] top-[18.2%] w-[19.6%] h-[26.4%] overflow-auto'>
         Welcome Delinquents, Deviants, & Degenerate Scum to an all new NFT fine dinning extravaganza,
         where being viscous is delicious.
@@ -50,7 +50,7 @@ const Counter: FC = () => {
             <p>Day 11 - 5 ETH</p>
             <p>Day 12 - 10 ETH</p>
         </div>
-        <p className='text-[2.7vw] font-zomby text-white black-text-outline-sm'>DAY 13 - 30 ETH</p>
+        <p className='text-[2.7vw] 3xl:text-[52px] font-zomby text-white black-text-outline-sm'>DAY 13 - 30 ETH</p>
       </div>
     </div>
   )

@@ -8,36 +8,34 @@ const Header = () => {
       <div className='flex gap-10 items-center justify-between w-full'>
         <div className='links flex justify-center items-center gap-10 text-white text-2xl uppercase font-bold'>
           <Link href='/'>
-            <a>
               <img src="/EAT THE oDD$.png" alt="EAT THE oDDS" />
-            </a>
           </Link>
         </div>
 
         <div className='hidden sm:flex gap-10'>
           <div className='links flex items-center gap-4 text-white text-3xl uppercase font-zomby '>
             <Link className="cursor-pointer" href='/'>
-              <span className="hover:text-fuchsia-600 cursor-pointer">
+              <span className="hover:text-[#EF03E7] cursor-pointer">
               About
               </span>
             </Link>
             <Link className="cursor-pointer" href='/bitelist'>
-              <span className="hover:text-fuchsia-600 cursor-pointer">
+              <span className="hover:text-[#EF03E7] cursor-pointer">
               Bitelist
               </span>
             </Link>
             <Link className="cursor-pointer" href='/tracker'>
-              <span className="hover:text-fuchsia-600 cursor-pointer">
+              <span className="hover:text-[#EF03E7] cursor-pointer">
               Tracker
               </span>
             </Link>
             <Link className="cursor-pointer" href='/eatery'>
-              <span className="hover:text-fuchsia-600 cursor-pointer">
+              <span className="hover:text-[#EF03E7] cursor-pointer">
               Eatery
               </span>
             </Link>
             <Link className="cursor-pointer" href='/faq'>
-              <span className="hover:text-fuchsia-600 cursor-pointer">
+              <span className="hover:text-[#EF03E7] cursor-pointer">
               FAQ
               </span>
             </Link>
@@ -51,9 +49,6 @@ const Header = () => {
             </a>
             <a className="cursor-pointer">
               <img src='/icon/discord.png' alt="Discord" />
-            </a>
-            <a className="cursor-pointer">
-              <img src='/icon/instagram.png' alt="Instagram" />
             </a>
             <a className="cursor-pointer">
               <img src='/icon/opensea.png' alt="Opensea" />

@@ -10,9 +10,6 @@ import Posters from './components/section/about/Posters';
 const Home: NextPage = () => {
   return (
     <div className='justify-center text-center'>
-      {/* <div className='flex justify-center'>
-        <ConnectButton />
-      </div> */}
       <Splash />
       <Counter />
       <Posters />

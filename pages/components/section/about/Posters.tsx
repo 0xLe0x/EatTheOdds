@@ -9,8 +9,8 @@ import poster_3 from '@/public/posters/poster_3.png';
 const Counter: FC = () => {
 
   return (
-    <div id='counter' className='relative w-full max-w-[1920px] mx-auto text-white'>
-      <Image src={postersImg} />
+    <div id='counter' className='relative w-full mx-auto text-white'>
+      <Image src={postersImg} alt='posters' />
       <div className='absolute left-[8.2%] top-0 w-[27.4%] h-[99%] poster'>
         <div className='relative h-full'>
           <div className='absolute text-[16px] leading-[20px] lg:text-[20px] lg:leading-[24px] text-left left-[12.5%] top-[10.6%] w-3/4 h-[70%] overflow-auto'>

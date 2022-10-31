@@ -1,10 +1,7 @@
 import type { NextPage } from 'next';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useState, useEffect } from "react"
-import { useRouter } from 'next/router';
 import { paramCase, capitalCase } from 'change-case';
-import Image from 'next/image';
-import {format, intervalToDuration, addHours, setMinutes, setSeconds} from 'date-fns';
+import { intervalToDuration, addHours, setMinutes, setSeconds } from 'date-fns';
 
 const RarityTracker: NextPage = () => {
   const [metadata, setMetadata] = useState(null as any);
@@ -30,12 +27,12 @@ const RarityTracker: NextPage = () => {
   }
 
   function pad(value: number | undefined) {
-      if(value == undefined) return "00"
-      if(value < 10) {
-          return '0' + value;
-      } else {
-          return value;
-      }
+    if (value == undefined) return "00"
+    if (value < 10) {
+      return '0' + value;
+    } else {
+      return value;
+    }
   }
   const countdown = () => {
     const now = new Date();
@@ -44,7 +41,7 @@ const RarityTracker: NextPage = () => {
       start: now,
       end: end
     })
-    
+
     setCountdownTime(`${pad(diff.hours)}: ${pad(diff.minutes)}: ${pad(diff.seconds)}`);
   }
 
@@ -62,16 +59,13 @@ const RarityTracker: NextPage = () => {
     getLivingOdds().then((odds: object[]) => {
       setLivingOdds(odds)
     })
-    setInterval(()=>{countdown()}, 1000)
+    setInterval(() => { countdown() }, 1000)
   }, []);
 
   const traitButtons = ["Skin", "Neck", "Mouth", "Eyes", "Nose", "Head", "Ears"]
 
   return (
-    <div className='justify-center text-center relative z-10'>
-      {/* <div className='flex justify-center'>
-        <ConnectButton />
-      </div> */}
+    <div className='justify-center text-center relative z-10 min-h-[80vw]'>
       <div className="lg:hidden text-white">
         This site is a rich, graphical experience. Please view on desktop.
       </div>
@@ -83,20 +77,20 @@ const RarityTracker: NextPage = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 my-[2vw] lg:w-[70vw] lg:h-[18.5vw] mx-auto gap-4">
             <div className="text-left">
-              <h2 className="lg:text-[1.6vw] text-fuchsia-600 uppercase">Trait: <span className="text-teal-400">{selectedTrait}</span></h2>
+              <h2 className="lg:text-[1.6vw] text-[#EF03E7] uppercase">Trait: <span className="text-teal-400">{selectedTrait}</span></h2>
               <ul>
                 {gameState?.traitNamesByType?.[selectedTrait]?.map((name: string, i: number) => {
                   return (<li key={`trait-rarity-${i}`} className="flex flex-nowrap">
-                     <div className="whitespace-nowrap">{capitalCase(name)} </div>
+                    <div className="whitespace-nowrap">{capitalCase(name)} </div>
                     <div className="flex-grow text-clip overflow-hidden"> ..........................................................</div>
                     <div> {gameState?.traitCounts?.[name]}</div>
-                     </li>)
+                  </li>)
                 }).slice(0, 10)}
               </ul>
             </div>
             <div className="text-left">
               <div className=" grid grid-cols-2">
-                <div className="text-[1.6vw] text-fuchsia-600 uppercase">
+                <div className="text-[1.6vw] text-[#EF03E7] uppercase">
                   Search
                 </div>
                 <div>
@@ -109,10 +103,10 @@ const RarityTracker: NextPage = () => {
                   <ul>
                     {metadata?.attributes?.map((attr: any, i: number) => {
                       return (<li key={`attr-${i}`} className="flex flex-nowrap max-w-[100%]">
-                    <div className="whitespace-nowrap">{attr.trait_value} </div>
-                    <div className="flex-grow text-clip overflow-hidden"> ..........................................................</div>
-                    <div> {gameState?.traitCounts?.[paramCase(attr.trait_value)]}</div>
-                        </li>)
+                        <div className="whitespace-nowrap">{attr.trait_value} </div>
+                        <div className="flex-grow text-clip overflow-hidden"> ..........................................................</div>
+                        <div> {gameState?.traitCounts?.[paramCase(attr.trait_value)]}</div>
+                      </li>)
                     }).slice(0, 8)}
                   </ul>
                 </div>
@@ -123,7 +117,7 @@ const RarityTracker: NextPage = () => {
               </div>
             </div>
             <div className="text-left">
-              <h2 className="text-[1.6vw] text-fuchsia-600 uppercase">Leaderboard</h2>
+              <h2 className="text-[1.6vw] text-[#EF03E7] uppercase">Leaderboard</h2>
               <ul>
                 {Array.isArray(livingOdds) && livingOdds.map((odd: any, i: number) => {
                   return (<li key={`top-tokens-${i}`} className="flex flex-nowrap max-w-[100%]">
@@ -142,7 +136,7 @@ const RarityTracker: NextPage = () => {
               <button key={`trait-button-${i}`} onClick={() => {
                 setSelectedTrait(paramCase(trait))
               }}
-                className="rounded-md text-fuchsia-600 uppercase relative"
+                className="rounded-md text-[#EF03E7] uppercase relative"
               >
                 <img src="/rarity-tracker/trait-button-background.png" className="w-full absolute" />
                 <div className="relative z-20 top-[.5vw] font-zomby text-[2vw]"> {trait} </div>

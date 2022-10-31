@@ -6,8 +6,8 @@ import napkinImg from '@/public/Napkin.png';
 const Napkin: FC = () => {
 
   return (
-    <div id='napkin' className='relative'>
-      <Image src={napkinImg} />
+    <div id='napkin' className='relative w-full'>
+      <Image src={napkinImg} alt="napkin" className='w-full'/>
     </div>
   )
 }
