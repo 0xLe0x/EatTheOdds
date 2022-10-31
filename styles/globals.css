@@ -38,6 +38,10 @@
     -webkit-text-stroke-color: black;
 }
 
+.poster:hover .poster-image {
+    display: none;
+}
+
 body{
     @apply font-elite;
 }
