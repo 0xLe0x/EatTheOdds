@@ -114,7 +114,7 @@ const Splash: FC = () => {
   }
 
   return (
-    <div id='splash' className='relative h-[56.25vw]'>
+    <div id='splash' className='relative h-[56.25vw] overflow-hidden'>
       <div>
         {pos_percent.map((p, i) => (
           <img

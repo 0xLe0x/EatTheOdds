@@ -7,7 +7,7 @@ const Ghosts: FC = () => {
 
   return (
     <div id='ghosts' className='relative w-full'>
-      <Image src={ghostsImg} alt="ghosts" className='mx-auto w-full'/>
+      <img src='Ghosts.png' alt="ghosts" className='mx-auto w-full'/>
       <div className='absolute font-[special-elite] text-[1.2vw]  leading-[1.6vw]  top-[43.3%] text-white flex flex-col justify-center w-full gap-1'>
         <div>
           Head over to discord.

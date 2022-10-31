@@ -1,13 +1,12 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react'
 import Image from 'next/image';
-import counterImg from '@/public/Counter.png';
 
 const Counter: FC = () => {
 
   return (
     <div id='counter' className='relative w-full mx-auto'>
-      <Image src={counterImg} alt="counter" className='w-full'/>
+      <img src='Counter.png' alt="counter" className='w-full'/>
       <div className='absolute font-[special-elite] text-[10px] leading-3 sm:text-[15px] sm:leading-5 lg:text-[20px] lg:leading-6 left-[12%] top-[18.2%] w-[19.6%] h-[26.4%] overflow-auto'>
         Welcome Delinquents, Deviants, & Degenerate Scum to an all new NFT fine dinning extravaganza,
         where being viscous is delicious.

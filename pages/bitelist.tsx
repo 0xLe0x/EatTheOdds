@@ -5,7 +5,7 @@ import bookImg from '@/public/bitelist.png';
 const RarityTracker: NextPage = () => {
   return (
     <div className='text-center'>
-      <Image src={bookImg} alt="book"/>
+      <img src='bitelist.png' alt="book" className='w-full' />
     </div>
   );
 };
