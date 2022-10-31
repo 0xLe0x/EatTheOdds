@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react'
-import Image from 'next/image';
 import plateImg from '@/public/Plate.gif';
 import forkImg from '@/public/Fork.png';
 import knifeImg from '@/public/Knife.png';
@@ -126,14 +125,14 @@ const Splash: FC = () => {
           />
         ))}
       </div>
-      <div className='absolute' style={{ left: relativeVw(406), top: relativeVw(388 - 108) }}>
-        <Image src={forkImg} style={{ width: relativeVw(forkImg.width), height: relativeVw(forkImg.height) }} alt="fork" />
+      <div className='absolute pointer-events-none' style={{ left: relativeVw(406), top: relativeVw(388 - 108) }}>
+        <img src='Fork.png' style={{ width: relativeVw(forkImg.width), height: relativeVw(forkImg.height) }} alt="fork" />
       </div>
-      <div className='absolute' style={{ left: relativeVw(575), top: relativeVw(191 - 108) }}>
+      <div className='absolute pointer-events-none' style={{ left: relativeVw(575), top: relativeVw(191 - 108) }}>
         <img src='Plate.gif' style={{ width: relativeVw(plateImg.width), height: relativeVw(plateImg.height) }} alt="plate" />
       </div>
-      <div className='absolute' style={{ left: relativeVw(1411), top: relativeVw(387 - 108) }}>
-        <Image src={knifeImg} style={{ width: relativeVw(knifeImg.width), height: relativeVw(knifeImg.height) }} alt="knife" />
+      <div className='absolute pointer-events-none' style={{ left: relativeVw(1411), top: relativeVw(387 - 108) }}>
+        <img src='Knife.png' style={{ width: relativeVw(knifeImg.width), height: relativeVw(knifeImg.height) }} alt="knife" />
       </div>
     </div>
   )
